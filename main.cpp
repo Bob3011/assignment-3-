@@ -190,16 +190,17 @@ int main()
     
     // sort the dinamic array of customers
     customer cTemp;
-    for (int i = 0; i < custNum - 1; i++)
+    for (int i = 0; i < custNum-1; i++)
     {
-        for (int j = 0; j < custNum - i - 1; j++) 
+        for (int j = 0; j < custNum-1; j++) 
         {
-            if (*(cust + j) < *(cust + (j + 1)))
+            if ((cust[j]) > (cust[j+1]))
             {
                 //swap arr[j] and arr[j+1]
-                 cTemp = *(cust+j);
-                *(cust+j) = *(cust+ (j+1));
-                *(cust+ (j+1)) = cTemp;
+                swap((cust[j]), (cust[j+1]));
+                /* cTemp = *(cust+j);
+                *(cust+j) = *(cust+ (j));
+                *(cust+ (j)) = cTemp;*/
             }
         }
     }

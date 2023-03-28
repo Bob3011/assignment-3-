@@ -32,6 +32,10 @@ public:
 
 	bool operator < (customer& customer);
 
+	bool operator > (customer& customer);
+
+	bool operator == (customer& customer);
+
 	void printInfo();
 };
 

@@ -68,7 +68,53 @@ bool customer::operator < (customer& n)
 	return ans;
 }
 
+bool customer::operator > (customer& n)
+{
+	bool ans = true;
+	if (this->c.hrs > n.c.hrs)
+	{
+		ans = true;
+	}
+	else if (this->c.hrs == n.c.hrs)
+	{
+		if (this->c.mins > n.c.mins)
+		{
+			ans = true;
+			return ans;
+		}
+		else
+		{
+			ans = false;
+			return ans;
+		}
+	}
+	return ans;
+}
+
+bool customer ::operator == (customer& n)
+{
+	bool ans = true;
+	if (this->c.hrs == n.c.hrs)
+	{
+		ans = true;
+	}
+	else if (! (this->c.hrs == n.c.hrs))
+	{
+		if (this->c.mins == n.c.mins)
+		{
+			ans = true;
+			return ans;
+		}
+		else
+		{
+			ans = false;
+			return ans;
+		}
+	}
+	return ans;
+}
+
 void customer::printInfo()
 {
-	cout << (this)->getName() << " hass appointmnet at " << (this)->getHrs() << ":" << (this)->getMins() << "0 with " << this->getMechanicName() << " of  id " << this->getmechanicID() << endl;
+	cout << (this)->getName() << " has appointmnet at " << (this)->getHrs() << ":" << (this)->getMins() << "0 with " << this->getMechanicName() << " of  id " << this->getmechanicID() << endl;
 }
